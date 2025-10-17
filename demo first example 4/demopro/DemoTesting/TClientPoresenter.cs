@@ -54,16 +54,24 @@ namespace DemoTesting
                 .Setup(m => m.ReadAllClients())
                 .Returns(testClients);
 
-            for (int clientId = 0; clientId < countClients; ++clientId)
+            var viewMocks = new List<Mock<IClientView>>();//
+
+            for (int clientId = 0; clientId < countClients; clientId++)
             {
                 Client client = testClients[clientId];
                 Mock<IClientView> view = new Mock<IClientView>();
 
-                ///Д.З. сделать проверку Verify
+                /// сделать проверку Verify
                 view.Setup(v => v.ShowClientInfo(client));
                 mockViews.Add(view.Object);
+                viewMocks.Add(view);//
             }
             var clientPresenter = new ClientPresenter(mockModel.Object, mockViews);
+
+            for (int i = 0; i < countClients; i++)//
+            {
+                viewMocks[i].Verify(v => v.ShowClientInfo(testClients[i]), Times.Once());
+            }
         }
     }
 }

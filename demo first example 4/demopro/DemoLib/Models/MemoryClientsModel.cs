@@ -49,5 +49,9 @@ namespace DemoLib.Models
         {
             return allClients_.Count;
         }
+        public void AddClient(Client client)
+        {
+            allClients_.Add(client);
+        }
     }
 }

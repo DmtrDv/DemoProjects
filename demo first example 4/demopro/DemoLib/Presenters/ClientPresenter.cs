@@ -44,6 +44,29 @@ namespace DemoLib.Presenters
                 }
             }
         }
+      /*  public void AddClient(Client client)
+        {
+            model_.AddClient(client); // Добавляем клиента в модель
+
+            if (views_.Count > 0 && views_[0] is Control control)
+            {
+                // Находим родительский контейнер
+                var parent = control.Parent;
+                if (parent is FlowLayoutPanel flowLayout)
+                {
+                    ClientView newCard = new ClientView();
+                    newCard.ShowClientInfo(client); // Заполняем карточку данными
+                    newCard.SelectedClient += (clientObj) =>
+                    {
+                        // Здесь можно вызвать обработчик выбора клиента
+                        // Пока оставляем пустым
+                    };
+
+                    flowLayout.Controls.Add(newCard); // Добавляем в layout
+                    views_.Add(newCard); // Добавляем в список представлений
+                }
+            }
+        }*/
 
         /// Д.З. Реализация фильтрации по какому-либо полю клиента
         /// Задание на 5+++++++. Сортировка  по числу заказов!!!

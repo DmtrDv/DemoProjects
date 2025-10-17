@@ -22,14 +22,6 @@ namespace DemoProject
 
         }
 
-        public void SetOrder(Order order)
-        {
-            /// Д.З. Сделать масштабирование колонок таблицы по размеру окна
-            /// Добавить строку Итого
-            /// По цене: средняя цена, по стоимости - общая сумма, остальные - прочерки
-            OrdersTable.DataSource = null;
-            OrdersTable.DataSource = order.GetRecords();
-        }
         private bool isLowRoleUser()
         {
             /// currentUser_ == null - это гость
@@ -86,5 +78,58 @@ namespace DemoProject
                                 MessageBoxIcon.Warning);
             }
         }
-    }
+        public void SetOrder(Order order)
+        {
+            /// Д.З. Сделать масштабирование колонок таблицы по размеру окна
+            /// Добавить строку Итого
+            /// По цене: средняя цена, по стоимости - общая сумма, остальные - прочерки
+            OrdersTable.DataSource = null;
+            OrdersTable.DataSource = order.GetRecords();
+            List<OrderRecord> records = order.GetRecords();
+
+            // Создаем DataTable
+            DataTable table = new DataTable();
+            table.Columns.Add("Товар");
+            table.Columns.Add("Дата заказа");
+            table.Columns.Add("Цена", typeof(double));
+            table.Columns.Add("Количество");
+            table.Columns.Add("Стоимость", typeof(double));
+
+            // Добавляем записи
+            foreach (OrderRecord record in records)
+            {
+                table.Rows.Add(
+                    record.NameProduct,
+                    record.SaleDate.ToShortDateString(),
+                    record.Price,
+                    record.Count.ToString(),
+                    record.Cost
+                );
+            }
+
+            // Добавляем строку Итого
+            if (records.Count > 0)
+            {
+                double averagePrice = records.Average(r => r.Price);
+                double totalCost = records.Sum(r => r.Cost);
+
+                /*foreach (OrderRecord record in records)
+                {
+                    totalPrice += record.Price;
+                    totalCost += record.Cost;
+                }
+
+                double averagePrice = totalPrice / records.Count;*/
+
+                table.Rows.Add(
+                    "Итого",
+                    "-",
+                    averagePrice,
+                    "-",
+                    totalCost
+                );
+            }
+            OrdersTable.DataSource = table;
+        }
+    }    
 }
