@@ -9,7 +9,7 @@ namespace DemoLib
         public string NameProduct { get; set; }
 
         [DisplayName("Дата заказа")]
-        public DateTime SaleDate { get; set; }
+        public DateTime? SaleDate { get; set; }
 
         [DisplayName("Цена")]
         public double Price { get; set; }
@@ -18,6 +18,10 @@ namespace DemoLib
         public int Count { get; set; }
 
         [DisplayName("Стоимость")]
-        public double Cost { get { return Price* Count; } }
+        public double Cost
+        {
+            get { return Price * Count; }
+            set {}
+        }
     }
 }

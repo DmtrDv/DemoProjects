@@ -87,49 +87,20 @@ namespace DemoProject
             OrdersTable.DataSource = order.GetRecords();
             List<OrderRecord> records = order.GetRecords();
 
-            // Создаем DataTable
-            DataTable table = new DataTable();
-            table.Columns.Add("Товар");
-            table.Columns.Add("Дата заказа");
-            table.Columns.Add("Цена", typeof(double));
-            table.Columns.Add("Количество");
-            table.Columns.Add("Стоимость", typeof(double));
-
-            // Добавляем записи
-            foreach (OrderRecord record in records)
-            {
-                table.Rows.Add(
-                    record.NameProduct,
-                    record.SaleDate.ToShortDateString(),
-                    record.Price,
-                    record.Count.ToString(),
-                    record.Cost
-                );
-            }
-
-            // Добавляем строку Итого
+            double averagePrice = records.Average(r => r.Price);
+            double totalCost = records.Sum(r => r.Cost);
             if (records.Count > 0)
             {
-                double averagePrice = records.Average(r => r.Price);
-                double totalCost = records.Sum(r => r.Cost);
-
-                /*foreach (OrderRecord record in records)
-                {
-                    totalPrice += record.Price;
-                    totalCost += record.Cost;
-                }
-
-                double averagePrice = totalPrice / records.Count;*/
-
-                table.Rows.Add(
-                    "Итого",
-                    "-",
-                    averagePrice,
-                    "-",
-                    totalCost
-                );
+                OrderRecord orderRecord = new OrderRecord();
+                orderRecord.NameProduct = "Итого";
+                orderRecord.SaleDate = null;
+                orderRecord.Price = averagePrice;
+                orderRecord.Count = null;
+                orderRecord.Cost = totalCost;
+                records.Add(orderRecord);
             }
-            OrdersTable.DataSource = table;
+
+            OrdersTable.DataSource = records;
         }
     }    
 }
