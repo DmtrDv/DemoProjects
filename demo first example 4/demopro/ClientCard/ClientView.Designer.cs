@@ -40,7 +40,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TitleLabel.Location = new System.Drawing.Point(27, 23);
+            this.TitleLabel.Location = new System.Drawing.Point(21, 21);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(92, 32);
             this.TitleLabel.TabIndex = 0;
@@ -48,19 +48,19 @@
             // 
             // AvatarBox
             // 
-            this.AvatarBox.Location = new System.Drawing.Point(223, 0);
+            this.AvatarBox.Location = new System.Drawing.Point(312, 21);
             this.AvatarBox.Name = "AvatarBox";
-            this.AvatarBox.Size = new System.Drawing.Size(232, 200);
+            this.AvatarBox.Size = new System.Drawing.Size(124, 115);
+            this.AvatarBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AvatarBox.TabIndex = 1;
             this.AvatarBox.TabStop = false;
             // 
             // DescriptionLabel
             // 
-            this.DescriptionLabel.AutoSize = true;
             this.DescriptionLabel.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DescriptionLabel.Location = new System.Drawing.Point(56, 122);
+            this.DescriptionLabel.Location = new System.Drawing.Point(22, 63);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(63, 25);
+            this.DescriptionLabel.Size = new System.Drawing.Size(284, 60);
             this.DescriptionLabel.TabIndex = 2;
             this.DescriptionLabel.Text = "label1";
             // 
@@ -68,7 +68,7 @@
             // 
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneLabel.Location = new System.Drawing.Point(220, 220);
+            this.PhoneLabel.Location = new System.Drawing.Point(24, 188);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(38, 14);
             this.PhoneLabel.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.MailLabel.AutoSize = true;
             this.MailLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MailLabel.Location = new System.Drawing.Point(357, 220);
+            this.MailLabel.Location = new System.Drawing.Point(24, 223);
             this.MailLabel.Name = "MailLabel";
             this.MailLabel.Size = new System.Drawing.Size(38, 14);
             this.MailLabel.TabIndex = 4;
