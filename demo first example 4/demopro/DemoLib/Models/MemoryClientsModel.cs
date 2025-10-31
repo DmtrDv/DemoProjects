@@ -17,7 +17,7 @@ namespace DemoLib.Models
 
             c1.order.AddRecord(new OrderRecord 
             { NameProduct = "Мешок цемента", 
-                Count = 1, Price = 10000, 
+                Count = 1, Price = 1000, 
                 SaleDate = new System.DateTime(2025, 10, 1) 
             });
 

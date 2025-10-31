@@ -83,24 +83,28 @@ namespace DemoProject
             /// Д.З. Сделать масштабирование колонок таблицы по размеру окна
             /// Добавить строку Итого
             /// По цене: средняя цена, по стоимости - общая сумма, остальные - прочерки
+
             OrdersTable.DataSource = null;
-            OrdersTable.DataSource = order.GetRecords();
             List<OrderRecord> records = order.GetRecords();
 
-            double averagePrice = records.Average(r => r.Price);
-            double totalCost = records.Sum(r => r.Cost);
+            List<OrderRecord> FinishRecords = new List<OrderRecord>();
+
             if (records.Count > 0)
             {
+            double totalCost = records.Sum(r => r.Cost);
+            double averagePrice = records.Average(r => r.Price);
+
+                FinishRecords.AddRange(records);
+
                 OrderRecord orderRecord = new OrderRecord();
-                orderRecord.NameProduct = "Итого";
-                orderRecord.SaleDate = null;
-                orderRecord.Price = averagePrice;
-                orderRecord.Count = null;
+                orderRecord.NameProduct = "Итого";                
+                orderRecord.Price = averagePrice;                
                 orderRecord.Cost = totalCost;
-                records.Add(orderRecord);
+
+                FinishRecords.Add(orderRecord);             
             }
 
-            OrdersTable.DataSource = records;
+            OrdersTable.DataSource = FinishRecords;
         }
     }    
 }
