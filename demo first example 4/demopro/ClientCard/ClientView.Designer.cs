@@ -38,19 +38,20 @@
             // 
             // TitleLabel
             // 
-            this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TitleLabel.Location = new System.Drawing.Point(21, 21);
+            this.TitleLabel.Location = new System.Drawing.Point(4, 15);
+            this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(92, 32);
+            this.TitleLabel.Size = new System.Drawing.Size(323, 97);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "label1";
             // 
             // AvatarBox
             // 
-            this.AvatarBox.Location = new System.Drawing.Point(312, 21);
+            this.AvatarBox.Location = new System.Drawing.Point(335, 15);
+            this.AvatarBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AvatarBox.Name = "AvatarBox";
-            this.AvatarBox.Size = new System.Drawing.Size(124, 115);
+            this.AvatarBox.Size = new System.Drawing.Size(150, 200);
             this.AvatarBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AvatarBox.TabIndex = 1;
             this.AvatarBox.TabStop = false;
@@ -58,9 +59,10 @@
             // DescriptionLabel
             // 
             this.DescriptionLabel.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DescriptionLabel.Location = new System.Drawing.Point(22, 63);
+            this.DescriptionLabel.Location = new System.Drawing.Point(4, 112);
+            this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(284, 60);
+            this.DescriptionLabel.Size = new System.Drawing.Size(322, 62);
             this.DescriptionLabel.TabIndex = 2;
             this.DescriptionLabel.Text = "label1";
             // 
@@ -68,9 +70,10 @@
             // 
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneLabel.Location = new System.Drawing.Point(24, 188);
+            this.PhoneLabel.Location = new System.Drawing.Point(8, 174);
+            this.PhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(38, 14);
+            this.PhoneLabel.Size = new System.Drawing.Size(45, 16);
             this.PhoneLabel.TabIndex = 3;
             this.PhoneLabel.Text = "label1";
             // 
@@ -78,15 +81,16 @@
             // 
             this.MailLabel.AutoSize = true;
             this.MailLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MailLabel.Location = new System.Drawing.Point(24, 223);
+            this.MailLabel.Location = new System.Drawing.Point(8, 199);
+            this.MailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MailLabel.Name = "MailLabel";
-            this.MailLabel.Size = new System.Drawing.Size(38, 14);
+            this.MailLabel.Size = new System.Drawing.Size(45, 16);
             this.MailLabel.TabIndex = 4;
             this.MailLabel.Text = "label1";
             // 
             // ClientView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.MailLabel);
@@ -94,8 +98,9 @@
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.AvatarBox);
             this.Controls.Add(this.TitleLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ClientView";
-            this.Size = new System.Drawing.Size(455, 246);
+            this.Size = new System.Drawing.Size(501, 230);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ClientView_MouseClick);
             this.MouseEnter += new System.EventHandler(this.ClientView_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ClientView_MouseLeave);

@@ -91,8 +91,8 @@ namespace DemoProject
 
             if (records.Count > 0)
             {
-            double totalCost = records.Sum(r => r.Cost);
-            double averagePrice = records.Average(r => r.Price);
+                double totalCost = records.Sum(r => r.Cost);
+                double averagePrice = records.Average(r => r.Price);
 
                 FinishRecords.AddRange(records);
 
