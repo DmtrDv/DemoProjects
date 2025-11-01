@@ -34,7 +34,7 @@ namespace ClientCard
             DescriptionLabel.Text = client.Description;
             PhoneLabel.Text = client.Phone;
             MailLabel.Text = client.Mail;
-            AvatarBox.Load(client.ImagePath);
+           // AvatarBox.Load(client.ImagePath);
         }
 
         public Client GetClientInfo()
@@ -64,6 +64,15 @@ namespace ClientCard
         private void ClientView_MouseClick(object sender, MouseEventArgs e)
         {
             SelectedClient?.Invoke(client_);
+        }
+        public void ClearClientInfo()
+        {
+            TitleLabel.Text = "Клиенты отсутствуют";
+            DescriptionLabel.Text = "";
+            PhoneLabel.Text = "";
+            MailLabel.Text = "";
+            AvatarBox.Image.Dispose();
+            AvatarBox.Image = null;
         }
     }
 }

@@ -53,5 +53,9 @@ namespace DemoLib.Models
         {
             allClients_.Add(client);
         }
+        public void DeleteClient(int a)
+        {
+           
+        }
     }
 }

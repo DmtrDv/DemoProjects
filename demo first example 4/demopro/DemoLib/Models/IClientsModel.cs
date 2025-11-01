@@ -7,6 +7,7 @@ namespace DemoLib.Models
         List<Client> ReadAllClients();
 
         int GetClientsCount();
-     //     void AddClient(Client client);
+        //     void AddClient(Client client);
+        void DeleteClient(int clientId);
     }
 }

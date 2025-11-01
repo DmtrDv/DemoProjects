@@ -88,5 +88,38 @@ namespace DemoLib.Models.Clients
                 throw ex;
             }
         }
-    }
+
+        public void DeleteClient(int clientId)
+        {            
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connStr))
+                {
+                    connection.Open();
+
+                    // Сначала удаляем связанные записи в таблице orders
+                    string deleteOrdersSql = "DELETE FROM orders WHERE idclient = @clientId";
+                    using (MySqlCommand deleteOrdersCommand = new MySqlCommand(deleteOrdersSql, connection))
+                    {
+                        deleteOrdersCommand.Parameters.AddWithValue("@clientId", clientId);
+                        deleteOrdersCommand.ExecuteNonQuery();
+                    }
+
+                    // Затем удаляем самого клиента
+                    string deleteClientSql = "DELETE FROM clientsinfo WHERE id = @clientId";
+                    using (MySqlCommand deleteClientCommand = new MySqlCommand(deleteClientSql, connection))
+                    {
+                        deleteClientCommand.Parameters.AddWithValue("@clientId", clientId);
+                        deleteClientCommand.ExecuteNonQuery();
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Ошибка при удалении клиента: {ex.Message}", ex);
+            }
+        }
+    }    
 }
