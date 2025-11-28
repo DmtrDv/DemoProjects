@@ -34,7 +34,7 @@ namespace ClientCard
             DescriptionLabel.Text = client.Description;
             PhoneLabel.Text = client.Phone;
             MailLabel.Text = client.Mail;
-           // AvatarBox.Load(client.ImagePath);
+            AvatarBox.Load(client.ImagePath);
         }
 
         public Client GetClientInfo()
@@ -73,6 +73,11 @@ namespace ClientCard
             MailLabel.Text = "";
             AvatarBox.Image.Dispose();
             AvatarBox.Image = null;
+        }
+        public void SetAvatarProperties(Size size, Point location)
+        {
+            AvatarBox.Size = size;
+            AvatarBox.Location = location;
         }
     }
 }

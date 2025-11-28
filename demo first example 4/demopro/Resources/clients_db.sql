@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `clients_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `clients_db`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: clients_db
@@ -26,13 +24,13 @@ DROP TABLE IF EXISTS `clientsinfo`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `clientsinfo` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `clientName` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
-  `phone` varchar(12) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
-  `mail` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
-  `description` text CHARACTER SET utf8mb3 COLLATE utf8mb3_bin,
-  `imagePath` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `clientName` varchar(255) COLLATE utf8mb3_bin NOT NULL,
+  `phone` varchar(12) COLLATE utf8mb3_bin DEFAULT NULL,
+  `mail` varchar(255) COLLATE utf8mb3_bin DEFAULT NULL,
+  `description` text COLLATE utf8mb3_bin,
+  `imagePath` varchar(500) COLLATE utf8mb3_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +39,7 @@ CREATE TABLE `clientsinfo` (
 
 LOCK TABLES `clientsinfo` WRITE;
 /*!40000 ALTER TABLE `clientsinfo` DISABLE KEYS */;
-INSERT INTO `clientsinfo` VALUES (1,'Просто Валера','777','777@mail.ru','самый лучший клиент','./Resources/valera.png'),(2,'ОАО ЕПРСТЕЙКА','666','777@sobaka.ru','Похуже, чем Валера','./Resources/eprst.png'),(3,'Елена Прекрасная','+79206969294','123@yandex.ru','Это вообще несчастная женщина','./Resources/elena.png'),(4,'Тестировщик','789456123','pumpumpum@mail.ru','тестит моё добавление 3','D:\\документы\\проекты C#\\тех\\прог 4к\\demo first\\demo first example 4\\demopro\\Resources\\icon-student.png');
+INSERT INTO `clientsinfo` VALUES (1,'Просто Валера','777','777@mail.ru','самый лучший клиент','../../../Resources/img/Valera.jpg'),(2,'ОАО ЕПРСТЕЙКА','666','777@sobaka.ru','Похуже, чем Валера','../../../Resources/img/prsteyka.jpg'),(3,'Елена Прекрасная','+79206969294','123@yandex.ru','Это вообще несчастная женщина','../../../Resources/img/prsteyka.jpg');
 /*!40000 ALTER TABLE `clientsinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +52,7 @@ DROP TABLE IF EXISTS `orders`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
   `idClient` int NOT NULL,
-  `article` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `article` varchar(500) COLLATE utf8mb3_bin NOT NULL,
   `date` date NOT NULL,
   `price` float NOT NULL DEFAULT '0',
   `count` int NOT NULL DEFAULT '0'
@@ -80,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-28 23:50:25
+-- Dump completed on 2025-10-23  8:42:41

@@ -121,5 +121,34 @@ namespace DemoLib.Models.Clients
                 throw new Exception($"Ошибка при удалении клиента: {ex.Message}", ex);
             }
         }
+        public void AddClient(Client client)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connStr))
+                {
+                    connection.Open();
+
+                    string request = @"INSERT INTO clientsinfo 
+                                (id, clientName, phone, mail, description, imagePath) 
+                                VALUES (@id, @clientName, @phone, @mail, @description, @imagePath)";
+                    using (MySqlCommand command = new MySqlCommand(request, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", client.ID);
+                        command.Parameters.AddWithValue("@clientName", client.Name);
+                        command.Parameters.AddWithValue("@phone", client.Phone);
+                        command.Parameters.AddWithValue("@mail", client.Mail);
+                        command.Parameters.AddWithValue("@description", client.Description);
+                        command.Parameters.AddWithValue("@imagePath", client.ImagePath);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Ошибка при добавлении клиента: {ex.Message}", ex);
+            }
+        }
     }    
 }

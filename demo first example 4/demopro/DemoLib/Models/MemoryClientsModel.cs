@@ -13,7 +13,7 @@ namespace DemoLib.Models
             c1.Description = "Это самый совершенный клиент из всех возможных";
             c1.Phone = "777";
             c1.Mail = "666@sobaka.ru";
-            c1.ImagePath = "../../../Resources/img/Valera.jpg";
+            c1.ImagePath = "../../../Resources/valera.png";
 
             c1.order.AddRecord(new OrderRecord 
             { NameProduct = "Мешок цемента", 
@@ -35,7 +35,7 @@ namespace DemoLib.Models
             c2.Description = "Похуже, чем Валера";
             c2.Phone = "666";
             c2.Mail = "777@sobaka.ru";
-            c2.ImagePath = "../../../Resources/img/prsteyka.jpg";
+            c2.ImagePath = "../../../Resources/eprst.png";
 
             allClients_.Add(c1);
             allClients_.Add(c2);

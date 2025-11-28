@@ -42,14 +42,17 @@
             this.TitleLabel.Location = new System.Drawing.Point(4, 15);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(323, 97);
+            this.TitleLabel.Size = new System.Drawing.Size(322, 97);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "label1";
             // 
             // AvatarBox
             // 
-            this.AvatarBox.Location = new System.Drawing.Point(335, 15);
-            this.AvatarBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AvatarBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AvatarBox.Location = new System.Drawing.Point(334, 15);
+            this.AvatarBox.Margin = new System.Windows.Forms.Padding(4);
             this.AvatarBox.Name = "AvatarBox";
             this.AvatarBox.Size = new System.Drawing.Size(150, 200);
             this.AvatarBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -62,7 +65,7 @@
             this.DescriptionLabel.Location = new System.Drawing.Point(4, 112);
             this.DescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(322, 62);
+            this.DescriptionLabel.Size = new System.Drawing.Size(303, 62);
             this.DescriptionLabel.TabIndex = 2;
             this.DescriptionLabel.Text = "label1";
             // 
@@ -93,12 +96,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Controls.Add(this.AvatarBox);
             this.Controls.Add(this.MailLabel);
             this.Controls.Add(this.PhoneLabel);
             this.Controls.Add(this.DescriptionLabel);
-            this.Controls.Add(this.AvatarBox);
             this.Controls.Add(this.TitleLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientView";
             this.Size = new System.Drawing.Size(501, 230);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ClientView_MouseClick);

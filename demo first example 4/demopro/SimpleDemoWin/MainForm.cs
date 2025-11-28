@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using DemoLib.Views;
 using System.Windows.Forms;
 using DemoLib;
 using DemoLib.Models.Clients;
+using System.Data;
+using System.Drawing;
+using DemoLib.Models;
 
 namespace SimpleDemoWin
 {
@@ -24,10 +28,10 @@ namespace SimpleDemoWin
         private void MainForm_Load(object sender, EventArgs e)
         {
             MySQLClientsModel model = new MySQLClientsModel();
-
+            
             allClients_ = model.ReadAllClients();
             ShowClients(allClients_);
-
+            Card.SetAvatarProperties(new Size(260,195), new Point(220,20));
         }
 
         private void ClientsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,13 +132,8 @@ namespace SimpleDemoWin
                 {
                     model.DeleteClient(selectedClient.ID);
 
-                        // Удаляем клиента из локального списка
-                        allClients_.Remove(selectedClient);
-
-                        ShowClients(allClients_);
-
-
-                        Card.ClearClientInfo();
+                    // Удаляем клиента из локального списка
+                    updateClients();
 
                         MessageBox.Show("Клиент успешно удален", "Успех",
                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -146,6 +145,23 @@ namespace SimpleDemoWin
                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            AddNewClientForm addNewClientForm = new AddNewClientForm(model);
+            if (addNewClientForm.ShowDialog() == DialogResult.OK)
+            {
+                Client client = addNewClientForm.addingClient;
+                model.AddClient(client);
+                updateClients();
+            }
+        }
+
+        public void updateClients()
+        {
+            allClients_ = model.ReadAllClients();
+            ShowClients(allClients_);
         }
     }
 }

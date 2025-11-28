@@ -44,7 +44,7 @@
             this.toolStripButton2});
             this.ManagementPanel.Location = new System.Drawing.Point(0, 0);
             this.ManagementPanel.Name = "ManagementPanel";
-            this.ManagementPanel.Size = new System.Drawing.Size(800, 35);
+            this.ManagementPanel.Size = new System.Drawing.Size(1067, 35);
             this.ManagementPanel.TabIndex = 0;
             this.ManagementPanel.Text = "toolStrip1";
             // 
@@ -73,20 +73,24 @@
             // 
             // OrdersTable
             // 
+            this.OrdersTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.OrdersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrdersTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrdersTable.Location = new System.Drawing.Point(0, 35);
+            this.OrdersTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OrdersTable.Name = "OrdersTable";
-            this.OrdersTable.Size = new System.Drawing.Size(800, 415);
+            this.OrdersTable.RowHeadersWidth = 51;
+            this.OrdersTable.Size = new System.Drawing.Size(1067, 519);
             this.OrdersTable.TabIndex = 1;
             // 
             // ClientOrdersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.OrdersTable);
             this.Controls.Add(this.ManagementPanel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ClientOrdersForm";
             this.Load += new System.EventHandler(this.ClientOrdersForm_Load);
             this.ManagementPanel.ResumeLayout(false);
